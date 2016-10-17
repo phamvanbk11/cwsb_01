@@ -15,8 +15,7 @@ RSpec.describe Search::SpacesController, type: :controller do
 
     context "check for gmaps rails" do
       let!(:address) {FactoryGirl.create :address}
-      let!(:venue) {stub_model(Venue, name: "test", description: "test",
-        address: address)}
+      let!(:venue) {FactoryGirl.create :venue, address: address}
       let(:addresses) {address}
       let(:hash) {mark_to_maps(addresses)}
 

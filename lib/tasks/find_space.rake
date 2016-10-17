@@ -9,10 +9,10 @@ namespace :search_space do
     venue1 = Venue.new name: Faker::Name.name,
       description: Faker::Lorem.sentence, address: address1
 
-    image1 = Image.new image_url: "/images/spaces/space_default.jpg"
-    image2 = Image.new image_url: "/images/spaces/space_default.jpg"
-    image3 = Image.new image_url: "/images/spaces/space_default.jpg"
-    image4 = Image.new image_url: "/images/spaces/space_default.jpg"
+    image1 = Image.new picture: "/images/spaces/space_default.jpg"
+    image2 = Image.new picture: "/images/spaces/space_default.jpg"
+    image3 = Image.new picture: "/images/spaces/space_default.jpg"
+    image4 = Image.new picture: "/images/spaces/space_default.jpg"
 
     space1 = Space.new space_type: :prive_office, size: 10, capicity: 4, quantity: 2
     space1.images << image1
