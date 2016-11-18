@@ -8,8 +8,9 @@
         <span class="icon-bar"></span>
       </button>
       <%= link_to root_url, class: "navbar-brand" do %>
+        <i class="gi gi-flash"></i>
         <span class="sidebar-nav-mini-hide">
-          <h1 id="logo"><%= t "layout.site_name" %></h1>
+          <strong><%= t "layout.site_name" %></strong>
         </span>
       <% end %>
     </div>
@@ -85,7 +86,7 @@
                         <div class="notificationContainer" id="none">
                           <div id="notificationsBody" class="notifications">
                           <div id="notificationsTitle">
-                            <%= link_to t("notification.mark_read_all"), read_noti_all_notifications_path,
+                            <%= link_to t("notification.mark_read_all"), reads_path,
                               method: :post, remote: true, class: "pull-right read-all" %>
                           </div>
                           <hr />
