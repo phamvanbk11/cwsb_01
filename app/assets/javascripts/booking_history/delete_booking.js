@@ -1,10 +1,13 @@
 $(document).ready(function(){
   var delete_booking = $('.delete-booking');
   delete_booking.on('click',function(){
-    if(window.confirm("Are you sure?")){
-      var current_booking_id = $(this).attr('id').split('-')[1];
-      delete_booking_with_id(current_booking_id);
-    }
+    var id_booking = $(this).attr('id');
+    bootbox.confirm("Are you sure?", function(result){
+      if(result){
+        var current_booking_id = id_booking.split('-')[1];
+        delete_booking_with_id(current_booking_id);
+      }
+    });
   });
 });
 

@@ -31,3 +31,5 @@
 /* Plugins, libraries */
 //= require jquery-form-validator/form-validator/jquery.form-validator.min.js
 //= require jquery-form-validator/form-validator/jquery.form-validator.js
+//= require bootbox.js/bootbox.js
+// = require confirm.js

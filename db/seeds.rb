@@ -73,7 +73,7 @@ address2 = Address.create! details: "Hotel Novotel Danang Premier Han River,
 
 venue1 = Venue.new name: Faker::Name.name,
   phone_number: '0511 3 1234567',
-  email: Faker::Internet.email,
+  email: Faker::Internet.email, status: true,
   description: Faker::Lorem.paragraph, address: address1
 
 image1 = Image.new picture: Rack::Test::UploadedFile.new(File.join(Rails.root, "public", "images",
@@ -98,7 +98,7 @@ venue1.save
 
 venue2 = Venue.new name: Faker::Name.name,
   phone_number: '0511 3 2343444',
-  email: Faker::Internet.email,
+  email: Faker::Internet.email, status: true,
   description: Faker::Lorem.paragraph, address: address2
 space3 = Space.new name: Faker::Name.name, space_type: :desk, area: 10, capicity: 4, quantity: 2,
   description: Faker::Lorem.paragraph

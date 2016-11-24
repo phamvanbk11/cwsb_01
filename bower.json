@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery-form-validator": "~2.3.26"
+    "jquery-form-validator": "~2.3.26",
+    "bootbox.js": "bootbox#^4.4.0"
   }
 }
