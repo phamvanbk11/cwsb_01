@@ -1,3 +1,11 @@
+.form_payment_directly{
+  background: #FFF;
+  width: 630px;
+  height: 550px;
+  vertical-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
 .form-alert{
   display: none;
   padding: 24px !important;
@@ -34,4 +42,20 @@ h2.venue-name, h4.venue-address {
 #modal_label_message{
   color: #000 !important;
   font-weight: bold !important;
+  text-align: center;
+}
+#hide_payment_directly{
+  display: none;
+}
+.display-none{
+  display: none;
+}
+.form_old_information{
+  vertical-align: center;
+  margin-top: 70px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.btn_payment{
+  margin-left: 20px;
 }

@@ -5,6 +5,7 @@ class Order < ApplicationRecord
 
   belongs_to :coupon
   belongs_to :venue
+  belongs_to :payment_method, polymorphic: true
 
   has_one :payment
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108071031) do
+ActiveRecord::Schema.define(version: 20161124110011) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "details",                   null: false
@@ -164,13 +164,16 @@ ActiveRecord::Schema.define(version: 20161108071031) do
   end
 
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "status",                default: 1
-    t.float    "total_paid", limit: 24
+    t.integer  "status",                         default: 1
+    t.float    "total_paid",          limit: 24
     t.integer  "venue_id"
+    t.string   "payment_method_type"
+    t.integer  "payment_method_id"
     t.datetime "deleted_at"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.index ["deleted_at"], name: "index_orders_on_deleted_at", using: :btree
+    t.index ["payment_method_type", "payment_method_id"], name: "index_orders_on_payment_method_type_and_payment_method_id", using: :btree
     t.index ["venue_id"], name: "index_orders_on_venue_id", using: :btree
   end
 
@@ -267,6 +270,16 @@ ActiveRecord::Schema.define(version: 20161108071031) do
     t.datetime "updated_at",                            null: false
     t.index ["deleted_at"], name: "index_spaces_on_deleted_at", using: :btree
     t.index ["venue_id"], name: "index_spaces_on_venue_id", using: :btree
+  end
+
+  create_table "user_payment_directlies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "address"
+    t.string   "phone"
+    t.integer  "status",     default: 1
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "user_role_venues", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

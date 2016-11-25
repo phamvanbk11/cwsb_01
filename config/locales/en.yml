@@ -356,6 +356,8 @@ en:
       create: "Have problem when create orders charge"
       load: "Can't find any order"
   booking_histories:
+    validation:
+      email: "Som help info..."
     index:
       your_bookings: "Your booking history"
       booking_histories: "Your booking history"
@@ -366,6 +368,28 @@ en:
       reject: "Rejected"
       payment: "Payment"
       paid: "Paid"
+    close: "X"
+    load:
+      errors: "Load User payment directly fails"
+    choose_payment_update:
+      success: "Update Success"
+      errors: "Update Errors"
+    choose_payment:
+      status: "Please Wait the minute, Payment is "
+      total_modal: "Payment method"
+      success: "Create Payment Directly Success"
+      errors: "Create Payment Fail"
+      full_name: "Full name"
+      address_payment: "Address Payment"
+      phone_payment: "Phone"
+      email_payment: "Email"
+      directly: "Payment Directly"
+      paypal: "Payment Paypal"
+      banking: "Payment Banking"
+      submit: "Submit"
+      update: "Update"
+      new: "New information"
+      old: "Use old information"
   spaces:
     index:
       edit: "Edit"
