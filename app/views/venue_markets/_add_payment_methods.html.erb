@@ -1,0 +1,46 @@
+<%= image_tag "payment_methods/paypal_logo.png", class: "icon_tag" %>
+<%= t "venue_markets.edit.add_new_paypal" %>
+<div class = "pull-right">
+  <button id = "btn_add_paypal" data-toggle="modal" data-target="#modal_add_method"
+    class="btn btn-primary payment-method btn-fix">
+    <%= t "venue_markets.edit.btn_add_paypal" %>
+  </button>
+</div>
+<hr class="hrule-divider--lg">
+<%= image_tag "payment_methods/directly_logo.png", class: "icon_tag" %>
+<%= t "venue_markets.edit.add_new_directly" %>
+<div class = "pull-right">
+  <div class = "btn-fix">
+    <% if @payment_directly %>
+      <%= link_to t("venue_markets.edit.btn_del_directly"),
+        venue_payment_method_path(@venue, @payment_directly),
+        method: :delete, data: { confirm: t("venue_markets.edit.confirm_delete")},
+        class: "btn btn-primary payment-method form-control" %>
+    <% else %>
+      <%= simple_form_for [@venue, @payment_method], remote: true do |payment| %>
+        <%= payment.hidden_field :payment_type, value: Settings.payment_methods.directly %>
+        <%= payment.submit t("venue_markets.edit.btn_add_directly"), id: "btn_add_directly",
+          class: "btn btn-primary payment-method btn-fix" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<hr class="hrule-divider--lg">
+<%= image_tag "payment_methods/banking_logo.png", class: "icon_tag" %>
+<%= t "venue_markets.edit.add_new_banking" %>
+<div class = "pull-right">
+  <div class = "btn-fix">
+    <% if @payment_banking %>
+      <%= link_to t("venue_markets.edit.btn_del_banking"),
+        venue_payment_method_path(@venue, @payment_banking),
+        method: :delete, data: { confirm: t("venue_markets.edit.confirm_delete")},
+        class: "btn btn-primary payment-method form-control" %>
+    <% else %>
+      <%= simple_form_for [@venue, @payment_method], remote: true do |payment| %>
+        <%= payment.hidden_field :payment_type, value: Settings.payment_methods.banking %>
+        <%= payment.submit t("venue_markets.edit.btn_add_banking"),
+          id: "btn_add_banking", class: "btn btn-primary payment-method btn-fix" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

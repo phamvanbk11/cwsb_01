@@ -25,6 +25,13 @@ status:
   rejected: "reject"
   accept: "accept"
   request: "request"
+directly: 0
+paypal: 1
+banking: 2
+payment_methods:
+  directly: "directly"
+  paypal: "paypal"
+  banking: "banking"
 day_reject: 1
 default_price: 0
 mail_from: "anhdungtestframgia@gmail.com"

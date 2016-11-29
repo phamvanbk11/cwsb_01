@@ -10,6 +10,7 @@ class Venue < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :spaces, dependent: :destroy
   has_many :working_times, dependent: :destroy
+  has_many :payment_methods, dependent: :destroy
   has_many :orders
   attr_accessor :user
 

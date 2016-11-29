@@ -1,0 +1,29 @@
+<% @payment_methods.each do |payment| %>
+  <% if payment.payment_type %>
+    <div class="col-sm-12 col-lg-3">
+      <div class="widget">
+        <div class="widget-extra-full themed-background-fixed">
+          <div class="widget-options">
+            <%= link_to venue_payment_method_path(@venue, payment), method: :delete,
+              data: {confirm: t("venue_markets.edit.confirm_delete")} do %>
+              <i class="fa fa-close" aria-hidden="true"></i>
+            <% end %>
+          </div>
+          <% if payment.paypal? %>
+            <%= image_tag "payment_methods/paypal_logo.png", class: "image_index" %>
+            <div class = "text-fix"><%= payment.email %></div>
+          <% else %>
+            <% if payment.banking? %>
+              <%= image_tag "payment_methods/banking_logo.png", class: "image_index" %>
+            <% else %>
+              <%= image_tag "payment_methods/directly_logo.png", class: "image_index" %>
+            <% end %>
+            <h2 class = "h2-fix pull-right">
+              <strong><%= payment.payment_type.titleize %></strong><br/>
+            </h2>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

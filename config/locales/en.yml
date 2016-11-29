@@ -460,8 +460,31 @@ en:
       price: "Price"
       total: "Total"
       back: "Go back your booking histories"
+  payment_methods:
+    not_found: "Payment method not found!"
+    existed_message: "This payment method existed!"
+    delete_successfully: "Delete payment method successfully!"
+    delete_error: "Opps! Cant delete this payment method!"
+    create_success: "Add payment method successfully!"
+    create_fail: "Opps! Add payment method failed!"
   venue_markets:
     edit:
+      account: "Account: "
+      add: "Add"
+      add_new_paypal: "Add new Paypal account"
+      add_new_banking: "Add Banking payment"
+      add_new_directly: "Add Directly payment"
+      other_settings: "Other settings"
+      add_paypal_account: "Add Paypal Account"
+      btn_add_directly: "Add Directly"
+      btn_del_directly: "Delete Directly"
+      btn_del_banking: "Delete Banking"
+      btn_add_banking: "Add Banking"
+      btn_add_paypal: "Add Paypal"
+      confirm_delete: "Are you sure?"
+      btn_add: "Add Payment Method"
+      btn_delete: "Delete"
+      pament_methods: "Payment methods"
       list_space: "If you change status, all spaces of this venue can't booking"
   user_role_venues:
     new:
@@ -501,4 +524,3 @@ en:
       permissions12: "Account settings"
       permissions13: "Data & analytics"
       permissions14: "Administrators"
-

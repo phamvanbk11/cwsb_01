@@ -16,6 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "jquery-form-validator": "~2.3.26"
+    "jquery-form-validator": "~2.3.44"
   }
 }
