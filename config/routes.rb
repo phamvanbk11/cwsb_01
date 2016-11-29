@@ -22,7 +22,9 @@ Rails.application.routes.draw do
     resources :spaces do
       resources :prices
     end
-    resources :orders
+    resources :orders do
+      resources :user_payment_directlies
+    end
     resource :venue_detail
     resources :venue_amenities
     resources :amenities do

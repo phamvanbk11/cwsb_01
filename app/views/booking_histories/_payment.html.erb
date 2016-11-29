@@ -3,7 +3,7 @@
     payments_path(order: order.id),
     class: "btn btn-success", disabled: true %>
 <% else %>
-  <%= button_to t("booking_histories.index.payment"),
-    payments_path(order: order.id),
-    class: "btn btn-danger" %>
+  <%= render "choose_payment", order: order %>
+  <%= link_to t("booking_histories.index.payment"), "#",
+    class: "btn btn-danger", data: {toggle: "modal", target: "#modal_payment_#{order.id}"} %>
 <% end %>
