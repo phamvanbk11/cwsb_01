@@ -3,5 +3,6 @@ FactoryGirl.define do
     name "test"
     description "test"
     address
+    user 
   end
 end
