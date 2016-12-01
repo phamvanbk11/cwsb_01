@@ -63,6 +63,7 @@ en:
   date:
     day_names: [SUN, MON, TUE, WED, THU, FRI, SAT]
   layout:
+    order_history: "Order history"
     your_booking: "Your booking"
     store_booking: "Store booking"
     payment_directly: "Payment directly"
@@ -356,6 +357,16 @@ en:
     errors:
       create: "Have problem when create orders charge"
       load: "Can't find any order"
+  order_histories:
+    index:
+      order_histories: "Order history"
+      payment_method_type: "Payment method type"
+      status: "Status"
+      payment_methods:
+        directly: "Directly"
+        paypal: "Paypal"
+        banking: "Banking"
+        undefined: "Undefined"
   booking_histories:
     validation:
       email: "Som help info..."

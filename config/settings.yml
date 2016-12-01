@@ -13,9 +13,12 @@ default_map_zoom: 16
 span_warning: "warning"
 span_success: "success"
 span_danger: "danger"
+span_info: "info"
+span_primary: "primary"
 reject_history: "Reject history"
 request_history: "Request history"
 accept_history: "Accept history"
+order_history: "Order history"
 state_pending: 0
 requested: 1
 accepted: 2
@@ -51,3 +54,5 @@ owner: "owner"
 manager: "manager"
 client_service : "client_service"
 reception : "reception"
+payment_methods_filter: {all: "", paypal: "Payment", banking: "UserPaymentBanking" , directly: "UserPaymentDirectly"}
+status_filter: {all: "", requested: 0, pending: 1, paid: 2, closed: 3}
