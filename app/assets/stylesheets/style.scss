@@ -16,3 +16,47 @@
 .sidebar-brand {
   background: #394263 !important;
 }
+
+hr.style-two {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.icon_tag{
+  width: 45px;
+  height: 45px;
+  margin-right: 3%;
+}
+
+.image_index{
+  width: 90px;
+  height: 90px;
+  margin-right: 3%;
+  padding-bottom: 0;
+}
+
+.fa-3{
+  font-size: 35px!important;
+  margin-right: 3%;
+}
+
+.themed-background-fixed{
+  height: 150px;
+  border-radius: 25px;
+  border: 2px solid #428bca;
+}
+
+.h2-fix{
+  margin-top: 5%!important;
+  margin-bottom: 5px!important;
+}
+
+.text-fix{
+  word-wrap: break-word;
+}
+
+.btn-fix{
+  width: 150px;
+}
