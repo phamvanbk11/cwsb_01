@@ -30,12 +30,12 @@ Rails.application.routes.draw do
     resources :amenities do
       resources :service_charges
     end
-    resource :venue_market
   end
 
   resources :static_pages
-    resources :notifications, only: [:index, :update] do
-    post :read_noti_all, on: :collection
+  resources :notifications, only: [:index, :update]
+  resources :reads, only: :update do
+    post :'update', on: :collection
   end
 
   mount ActionCable.server => '/cable'
