@@ -65,6 +65,7 @@ en:
   layout:
     your_booking: "Your booking"
     store_booking: "Store booking"
+    payment_directly: "Payment directly"
     base_title: "CWBS"
     site_name: "CWBS"
     account: "Account"
@@ -368,6 +369,7 @@ en:
       reject: "Rejected"
       payment: "Payment"
       paid: "Paid"
+      paymented: "Paymented"
     close: "X"
     load:
       errors: "Load User payment directly fails"
@@ -433,6 +435,12 @@ en:
       cancel: "Cancel"
       submit: "Submit"
       rejected: "rejected"
+  confirm_payment_directly:
+    title: "Confirm Payment Directly"
+    email: "Email:"
+    phone: "Phone:"
+    address: "Address:"
+    confirm: "Confirm Payment Directly"
   notification:
     has: "has"
     ago: "ago"
@@ -442,6 +450,20 @@ en:
     mark_read_all: "Mark read all"
     unread: "unread"
   payments:
+    title:
+      status: "Accept Payments"
+      space: "Name Space"
+      image: "Image Space"
+      quantity: "Status and Quantity"
+      duration: "Times and Duration"
+      information: "Customer Payment Information"
+    tooltip:
+      status_pending: "You must click for change accepted payment and can't change again"
+      status_accepted: "Payment is accepted and can't change again"
+    payment: "Payment is "
+    directly:
+      email: "Change Status Payment Directly"
+      status: "The Payment Directly is "
     errors:
       create: "Have problem when create payment"
       load: "Can't find any payment"

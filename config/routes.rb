@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :payments
   resources :booking_histories, only: :index
   resources :static_pages, only: :index
+  resource :confirm_payment_directlies
 
   namespace :search do
     resources :spaces

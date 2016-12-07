@@ -13,6 +13,10 @@ class Order < ApplicationRecord
 
   enum status: {requested: 0, pending: 1, paid: 2, closed: 3}
 
+  scope :have_order_payment_directly, -> do
+    where payment_method_type: UserPaymentDirectly.name
+  end
+
   def update_booking
     @booking_ids = booking_ids.split(" ")
     @booking_ids.each do |booking_id|
