@@ -100,7 +100,7 @@ en:
   home:
     coworking_space: "Co-working space "
     sharing: "Sharing"
-    search: "Search"
+    search: "Where do you want to search?"
     about_us: "About us"
     company: "Company"
     contact: "Contact"
@@ -379,7 +379,7 @@ en:
       accept: "Accepted"
       reject: "Rejected"
       payment: "Payment"
-      paid: "Paid"
+      paid: "Paymented"
       paymented: "Paymented"
     close: "X"
     load:

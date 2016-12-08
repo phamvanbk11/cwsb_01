@@ -19,7 +19,7 @@
   </td>
   <td class="text-center col-md-2">
     <strong id ="">
-      <%= render_payment_method_type order %>
+      <%= render_payment_detail_type order %>
     </strong>
   </td>
   <td class="text-center col-md-2">
@@ -30,19 +30,19 @@
     </strong>
   </td>
   <td class="col-md-2">
-    <% if order.payment_method %>
+    <% if order.payment_detail %>
       <span class="fa fa-user" aria-hidden="true">
-        <%= order.payment_method.name %></span></p>
+        <%= order.payment_detail.name %></span></p>
       <strong>
       <span class="fa fa-envelope" aria-hidden="true">
-        <%= order.payment_method.email %></span></p>
+        <%= order.payment_detail.email %></span></p>
       <strong>
         <span class="fa fa-phone-square" aria-hidden="true">
-          <%= order.payment_method.phone %></span>
+          <%= order.payment_detail.phone %></span>
       </strong>
       </p>
       <span class="fa fa-location-arrow" aria-hidden="true">
-        <%= order.payment_method.address %></span>
+        <%= order.payment_detail.address %></span>
     <% end %>
   </td>
 </div>

@@ -35,26 +35,26 @@
                   <%= render "confirm_payment_directlies/information_payment_directlies", order: order %>
                   <td class="text-left">
                     <div class="load-status">
-                      <% if order.payment_method.pending? %>
+                      <% if order.payment_detail.pending? %>
                         <label class="switch switch-primary" data-toggle="tooltip"
                           title ="<%= t "payments.tooltip.status_pending" %>">
-                          <%= check_box_tag :status, order.payment_method.status, checked = false,
-                            id: "checkbox-payment-method-#{order.payment_method.id}",
+                          <%= check_box_tag :status, order.payment_detail.status, checked = false,
+                            id: "checkbox-payment-method-#{order.payment_detail.id}",
                             class: "payment-directly-status" %>
                           <span></span>
                         </label>
-                        <label class="label label-danger" id="label-status-<%= order.payment_method.id %>">
-                          <%= t "payments.payment" %><%= order.payment_method.status %>
+                        <label class="label label-danger" id="label-status-<%= order.payment_detail.id %>">
+                          <%= t "payments.payment" %><%= order.payment_detail.status %>
                         </label>
                       <% else %>
                         <label class="switch switch-primary" data-toggle="tooltip"
                           title ="<%= t "payments.tooltip.status_accepted" %>">
-                          <%= check_box_tag :status, order.payment_method.status,
+                          <%= check_box_tag :status, order.payment_detail.status,
                             checked = true, disabled: true %>
                           <span></span>
                         </label>
-                        <label class="label label-info" id="label-status-<%= order.payment_method.id %>">
-                          <%= t "payments.payment" %><%= order.payment_method.status %>
+                        <label class="label label-info" id="label-status-<%= order.payment_detail.id %>">
+                          <%= t "payments.payment" %><%= order.payment_detail.status %>
                         </label>
                       <% end %>
                     </div>

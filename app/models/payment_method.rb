@@ -1,5 +1,6 @@
 class PaymentMethod < ApplicationRecord
   belongs_to :venue
+  has_one :paypal
 
   validates :payment_type, presence: true
   validates :email, presence: true, length: {maximum: 255},
