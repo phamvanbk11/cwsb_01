@@ -14,7 +14,7 @@ class AmenitiesController < ApplicationController
   def create
     @amenity = Amenity.new amenity_params
     if @amenity.save
-      flash[:success] = t "amenities.new.success"
+      flash[:success] = t "amenities.new.create_success"
       redirect_to venue_amenities_path
     else
       flash[:danger] = t "amenities.new.create_fail"

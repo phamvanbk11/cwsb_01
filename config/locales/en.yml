@@ -289,7 +289,7 @@ en:
       is_free: "This amenity is free"
       submit: "Save"
       create_success: "Create amenity successfully"
-      create_fail: "Have some error when create amenity"
+      create_fail: "Have some error when create amenity" 
       edit_success: "Edit amenity successfully"
       cancel: "Cancel"
       price: "Price (VND)"
