@@ -16,6 +16,14 @@ class Order < ApplicationRecord
   scope :have_order_payment_directly, -> do
     where payment_method_type: UserPaymentDirectly.name
   end
+  scope :recent, ->{order :created_at}
+
+  scope :filter_by_payment_method, ->payment_method_type do
+    where payment_method_type: payment_method_type if payment_method_type.present?
+  end
+  scope :filter_by_status, ->status do
+    where status: status if status.present?
+  end
 
   def update_booking
     @booking_ids = booking_ids.split(" ")

@@ -1,0 +1,48 @@
+<div class = "col-md-12">
+  <td class="col-md-4">
+    <h2 class="venue-name">
+      <strong><%= order.venue.name %></strong>
+    </h2>
+    <div class="block-section padding-0-15">
+      <h4 class="venue-address"><%= order.venue.address_details %></h4>
+      <address>
+        <i class="fa fa-phone"></i> <%= order.venue.phone_number %><br>
+        <i class="fa fa-envelope-o"></i>
+        <%= link_to order.venue.email, "javascript:;" %>
+      </address>
+    </div>
+  </td>
+  <td class="text-center col-md-2">
+    <span class="label label-<%= display_status order %>">
+      <%= order.status %>
+    </span>
+  </td>
+  <td class="text-center col-md-2">
+    <strong id ="">
+      <%= render_payment_method_type order %>
+    </strong>
+  </td>
+  <td class="text-center col-md-2">
+    <strong>
+      <span class="badge">$
+        <%= order.total_paid %>
+      </span>
+    </strong>
+  </td>
+  <td class="col-md-2">
+    <% if order.payment_method %>
+      <span class="fa fa-user" aria-hidden="true">
+        <%= order.payment_method.name %></span></p>
+      <strong>
+      <span class="fa fa-envelope" aria-hidden="true">
+        <%= order.payment_method.email %></span></p>
+      <strong>
+        <span class="fa fa-phone-square" aria-hidden="true">
+          <%= order.payment_method.phone %></span>
+      </strong>
+      </p>
+      <span class="fa fa-location-arrow" aria-hidden="true">
+        <%= order.payment_method.address %></span>
+    <% end %>
+  </td>
+</div>

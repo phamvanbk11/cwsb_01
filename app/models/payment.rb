@@ -1,5 +1,5 @@
 class Payment < ApplicationRecord
-  belongs_to :order
+  has_many :orders, as: :payment_method
 
   def paypal_url(return_path)
     values = {

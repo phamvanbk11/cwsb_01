@@ -1,0 +1,22 @@
+<% if @orders.any? %>
+  <div class="block custom-block">
+    <div class="table-responsive padding-0-15">
+      <table class="table table-vcenter bookings-table">
+        <tr class="info">
+          <th class = "text-center"><%= t ".venue" %></th>
+          <th class = "text-center"><%= t ".status" %></th>
+          <th class = "text-center"><%= t "payment_method_type" %></th>
+          <th class = "text-center"><%= t "total_paid" %></th>
+          <th class = "text-center"><%= t ".customer" %></th>
+        </tr>
+        <% @orders.each_with_index do |order, index| %>
+          <tbody>
+            <%= render "order_detail", order: order %>
+          </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>
+<% else %>
+  <p><%= t "errors.blank", type: Settings.order_history %></p>
+<% end %>
