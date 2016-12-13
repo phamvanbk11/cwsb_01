@@ -167,36 +167,42 @@ ActiveRecord::Schema.define(version: 20161129102642) do
     t.integer  "status",                         default: 1
     t.float    "total_paid",          limit: 24
     t.integer  "venue_id"
-    t.string   "payment_method_type"
-    t.integer  "payment_method_id"
+    t.string   "payment_detail_type"
+    t.integer  "payment_detail_id"
     t.datetime "deleted_at"
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
     t.index ["deleted_at"], name: "index_orders_on_deleted_at", using: :btree
-    t.index ["payment_method_type", "payment_method_id"], name: "index_orders_on_payment_method_type_and_payment_method_id", using: :btree
+    t.index ["payment_detail_type", "payment_detail_id"], name: "index_orders_on_payment_detail_type_and_payment_detail_id", using: :btree
     t.index ["venue_id"], name: "index_orders_on_venue_id", using: :btree
   end
 
   create_table "payment_methods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "payment_type"
     t.text     "email",        limit: 65535
+    t.boolean  "is_chosen",                  default: true
     t.integer  "venue_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.integer  "paypal_id"
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.index ["paypal_id"], name: "index_payment_methods_on_paypal_id", using: :btree
     t.index ["venue_id"], name: "index_payment_methods_on_venue_id", using: :btree
   end
 
-  create_table "payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "paypals", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
+    t.string   "email"
     t.decimal  "price",                             precision: 10
     t.text     "notification_params", limit: 65535
     t.string   "status"
     t.string   "transaction_id"
     t.datetime "purchased_at"
     t.integer  "order_id"
+    t.integer  "payment_method_id"
     t.datetime "created_at",                                       null: false
     t.datetime "updated_at",                                       null: false
-    t.index ["order_id"], name: "index_payments_on_order_id", using: :btree
+    t.index ["order_id"], name: "index_paypals_on_order_id", using: :btree
+    t.index ["payment_method_id"], name: "index_paypals_on_payment_method_id", using: :btree
   end
 
   create_table "permissions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

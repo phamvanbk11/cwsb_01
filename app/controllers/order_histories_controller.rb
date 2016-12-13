@@ -3,7 +3,7 @@ class OrderHistoriesController < ApplicationController
 
   def index
     @orders = current_user.orders
-      .recent.filter_by_payment_method(params[:payment_method_type])
+      .recent.filter_by_payment_detail(params[:payment_detail_type])
       .filter_by_status(params[:status])
   end
 end

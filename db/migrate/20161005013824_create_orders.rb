@@ -4,7 +4,7 @@ class CreateOrders < ActiveRecord::Migration[5.0]
       t.integer :status, default: 1
       t.float :total_paid
       t.references :venue
-      t.references :payment_method, polymorphic: true
+      t.references :payment_detail, polymorphic: true
       t.datetime "deleted_at"
 
       t.timestamps

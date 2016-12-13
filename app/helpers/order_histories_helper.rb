@@ -13,8 +13,8 @@ module OrderHistoriesHelper
     end
   end
 
-  def render_payment_method_type order
-    case order.payment_method_type
+  def render_payment_detail_type order
+    case order.payment_detail_type
     when Settings.payment_methods_filter[:directly]
       t ".directly"
     when Settings.payment_methods_filter[:paypal]

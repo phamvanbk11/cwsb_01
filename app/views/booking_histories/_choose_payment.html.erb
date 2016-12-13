@@ -9,14 +9,18 @@
           <%= t "booking_histories.choose_payment.total_modal" %></h4>
       </div>
       <div class="btn_payment">
-        <div class="col-md-4 col-xs-12">
-          <%= link_to t("booking_histories.choose_payment.directly"),
-            "#", class: "btn btn-primary payment-directly", checked: false, id: "#{order.id}" %>
-        </div>
-        <div class="col-md-4 col-xs-12">
-          <%= button_to t("booking_histories.choose_payment.paypal"),
-            payments_path(order: order.id), class: "btn btn-primary", disabled: payment_directly_exist?(order) %>
-        </div>
+        <% if order.venue.payment_methods.directly.present? %>
+          <div class="col-md-4 col-xs-12">
+            <%= link_to t("booking_histories.choose_payment.directly"),
+              "#", class: "btn btn-primary payment-directly", checked: false, id: "#{order.id}" %>
+          </div>
+        <% end %>
+        <% if order.venue.payment_methods.paypal.present? %>
+          <div class="col-md-4 col-xs-12">
+            <%= button_to t(".paypal"),
+              paypals_path(order: order.id), class: "btn btn-primary", disabled: payment_directly_exist?(order) %>
+          </div>
+        <% end %>
         <div class="col-md-4 col-xs-12">
           <%= link_to t("booking_histories.choose_payment.banking"),
             "#", class: "btn btn-primary", disabled: payment_directly_exist?(order) %>

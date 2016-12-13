@@ -36,7 +36,7 @@ class Booking < ApplicationRecord
     where.not order_id: nil
   end
 
-  scope :by_date, -> {order(created_at: :desc)}
+  scope :recent, -> {order(created_at: :desc)}
 
   scope :group_by_order, -> state do
     send(state).group_by{|booking| booking.order}

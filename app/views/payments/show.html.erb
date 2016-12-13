@@ -10,13 +10,13 @@
           <p>
             <em>
               <%= t ".purchased_at" %> :
-              <%= l @payment.purchased_at, format: :default %>
+              <%= l @paypal.purchased_at, format: :default %>
             </em>
           </p>
           <p>
             <em>
               <%= t ".transaction_id" %> :
-              <%= @payment.transaction_id %>
+              <%= @paypal.transaction_id %>
             </em>
           </p>
         </div>
@@ -36,7 +36,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @payment.order.bookings.each do |booking| %>
+            <% @paypal.order.bookings.each do |booking| %>
               <tr>
                 <td class="col-md-9">
                   <em><%= booking.space_name %></em>
@@ -59,7 +59,7 @@
                 <h4><strong><%= t ".total" %> : </strong></h4>
               </td>
               <td class="text-center text-danger">
-                <h4><strong>$ <%= @payment.price %></strong></h4>
+                <h4><strong>$ <%= @paypal.price %></strong></h4>
               </td>
             </tr>
           </tbody>

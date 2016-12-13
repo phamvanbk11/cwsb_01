@@ -1,9 +1,14 @@
-class Payment < ApplicationRecord
-  has_many :orders, as: :payment_method
+class Paypal < ApplicationRecord
+  has_one :order, as: :payment_method
+  belongs_to :payment_method
+
+  attr_accessor :order
+
+  before_create :update_payment_paypal_of_order
 
   def paypal_url(return_path)
     values = {
-      business: Settings.paypal_business,
+      business: self.payment_method.email,
       cmd: "_cart",
       upload: 1,
       return: "#{Settings.ngrok_host}#{return_path}",
@@ -20,5 +25,10 @@ class Payment < ApplicationRecord
       })
     end
     "#{Settings.paypal_host}/cgi-bin/webscr?" + values.to_query
+  end
+
+  def update_payment_paypal_of_order
+    order.update_attributes payment_detail_id: id,
+      payment_detail_type: Paypal.name
   end
 end

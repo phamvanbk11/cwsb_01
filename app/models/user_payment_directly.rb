@@ -2,7 +2,7 @@ class UserPaymentDirectly < ApplicationRecord
 
   attr_accessor :order
 
-  has_many :orders, as: :payment_method
+  has_many :orders, as: :payment_details
 
   enum status: { rejected: 0, pending: 1, accepted: 2 }
 
@@ -14,7 +14,7 @@ class UserPaymentDirectly < ApplicationRecord
   after_create :update_payment_method_of_order
 
   def update_payment_method_of_order
-    order.update_attributes payment_method_id: id,
-      payment_method_type: UserPaymentDirectly.name
+    order.update_attributes payment_detail_id: id,
+      payment_detail_type: UserPaymentDirectly.name
   end
 end
